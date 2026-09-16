@@ -1,3 +1,5 @@
+/* Site appearance. Content is edited in index.html. */
+
 html {
   font-size: 72.5%; }
 
@@ -86,6 +88,12 @@ div#pagetitle{
     margin-right: 10px;
 }
 
+/* Change this value to adjust the name size (3rem is about 35px). */
+#name h1 {
+    font-size: 3rem;
+    letter-spacing: -0.05rem;
+}
+
 #name {
     vertical-align: top;
     text-align: center;
@@ -145,7 +153,7 @@ h1>a:hover {
 
 hr {
     color: #222222;
-    height = 1px;
+    height: 1px;
 }
 
 a {
@@ -241,4 +249,49 @@ table ol {
     margin-right: 2px;
     margin-left: 5px;
     padding-top: 2px;
+}
+
+.section-tabs {
+    display: flex;
+    gap: 2rem;
+    border-bottom: 1px solid #d3f3ef;
+    margin-top: 3rem;
+}
+
+.section-tabs a {
+    color: #222222;
+    padding: 0.6rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.section-tabs a[aria-selected="true"] {
+    color: #287d71;
+    border-bottom-color: #40A596;
+}
+
+.section-tabs a:focus-visible,
+.tab-panel:focus-visible {
+    outline: 2px solid #40A596;
+    outline-offset: 4px;
+}
+
+.tab-panel[hidden] {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    div#contentpane { width: 95%; }
+    div#content { margin-left: 16px; margin-right: 16px; }
+    div#pagetitle {
+        width: auto;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    #headerimg {
+        margin: 0;
+        width: 200px;
+        height: auto;
+    }
+    #headerimg img { display: block; max-width: 100%; height: auto; }
+    .section-tabs { gap: 1.5rem; }
 }
